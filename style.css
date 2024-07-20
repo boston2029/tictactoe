@@ -1,4 +1,46 @@
-html {
+html,body {
   height: 100%;
   width: 100%;
+  margin:0;
+  background:#ff7b00;
+}
+
+.board {
+  display:grid;
+  height:75%;
+  aspect-ratio:1;
+  gap:10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+}
+
+.spot {
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:xxx-large;
+}
+
+center {
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:5;
+}
+
+.x {
+  color:red;
+}
+
+.o {
+  color:blue;
+}
+
+h1 {
+  color:white;
+  -webkit-text-stroke:1px black;
 }
