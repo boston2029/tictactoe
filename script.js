@@ -78,7 +78,7 @@ Array.from(document.querySelector('.board').children).forEach(spot => {
     updateBoardArray()
     if (someoneWon(currentPlayer)) {
       document.getElementById(`${currentPlayer.toLowerCase()}win`).play()
-      document.querySelector('h1').innerHTML=currentPlayer+" won! <a style='color:white;-webkit-text-stroke:1px black;text-decoration-color:white;' href='/'>Play again?</a>"
+      document.querySelector('h1').innerHTML=currentPlayer+" won! <a style='color:white;-webkit-text-stroke:1px black;text-decoration-color:white;' href='/tictactoe'>Play again?</a>"
       playable=false
     } else if (boardFilled()) {
       document.getElementById(`drawsfx`).play()
