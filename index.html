@@ -9,6 +9,16 @@
 </head>
 
 <body>
+  <audio id="drawsfx" src="audio/itsadraw.mp3"></audio>
+  <audio id="owin" src="audio/o wins.mp3"></audio>
+  <audio id="xwin" src="audio/x wins.mp3"></audio>
+  <audio id="xplace" src="audio/xplace.mp3"></audio>
+  <audio id="oplace" src="audio/oplace.mp3"></audio>
+  <div style="display:none;" class="instructions">
+    <h2 style="display:inline;">How to Play</h2>
+    <button style="border:none;outline:none;background:rgb(255,83,83);color:white;padding:10px;border-radius:50px;float:right;cursor:pointer;" onclick="this.parentElement.style.display='none';localStorage.setItem('sawInstructions',true)" >Close</button><br>
+    <p>In Tic Tac Toe, you are trying to get 3 of your piece in a row. This can be horizontal (left/right), vertical (up and down) or diagonal (at an angle).</p>
+  </div>
   <center>
     <h1></h1>
   </center>

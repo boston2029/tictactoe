@@ -1,8 +1,8 @@
 // CONDITIONALS
 
 const row1filled = (piece) => board[0].every(a=>a==piece)
-const row2filled = (piece) => board[0].every(a=>a==piece)
-const row3filled = (piece) => board[0].every(a=>a==piece)
+const row2filled = (piece) => board[1].every(a=>a==piece)
+const row3filled = (piece) => board[2].every(a=>a==piece)
 
 const column1filled = (piece) => {
   if (board[0][0]==piece&&board[1][0]==piece&&board[2][0]==piece) {
@@ -72,14 +72,17 @@ Array.from(document.querySelector('.board').children).forEach(spot => {
   spot.onclick=function(){
     if (!playable) {return}
     if (spot.innerText.trim()!='') {return}
+    document.getElementById(`${currentPlayer.toLowerCase()}place`).play()
     spot.classList.add(currentPlayer.toLowerCase())
     spot.innerText=currentPlayer
     updateBoardArray()
     if (someoneWon(currentPlayer)) {
-      document.querySelector('h1').innerText=currentPlayer+" won!"
+      document.getElementById(`${currentPlayer.toLowerCase()}win`).play()
+      document.querySelector('h1').innerHTML=currentPlayer+" won! <a style='color:white;-webkit-text-stroke:1px black;text-decoration-color:white;' href='/'>Play again?</a>"
       playable=false
     } else if (boardFilled()) {
-      document.querySelector('h1').innerText="It's a tie!"
+      document.getElementById(`drawsfx`).play()
+      document.querySelector('h1').innerHTML="It's a tie! <a style='color:white;-webkit-text-stroke:1px black;text-decoration-color:white;' href='/'>Play again?</a"
       playable=false
     } else {
       currentPlayer=currentPlayer=='X'?'O':'X'
@@ -87,3 +90,9 @@ Array.from(document.querySelector('.board').children).forEach(spot => {
     }
   }
 })
+
+if (localStorage.getItem("sawInstructions") != null) {
+  document.querySelector('.instructions').remove()
+} else {
+  document.querySelector('.instructions').style.display='block'
+}
