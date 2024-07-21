@@ -82,7 +82,7 @@ Array.from(document.querySelector('.board').children).forEach(spot => {
       playable=false
     } else if (boardFilled()) {
       document.getElementById(`drawsfx`).play()
-      document.querySelector('h1').innerHTML="It's a tie! <a style='color:white;-webkit-text-stroke:1px black;text-decoration-color:white;' href='/'>Play again?</a"
+      document.querySelector('h1').innerHTML="It's a tie! <a style='color:white;-webkit-text-stroke:1px black;text-decoration-color:white;' href='/tictactoe'>Play again?</a"
       playable=false
     } else {
       currentPlayer=currentPlayer=='X'?'O':'X'
